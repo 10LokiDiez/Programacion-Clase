@@ -1,0 +1,6 @@
+Televisor LED , Samsung, bajo consumo, Samsung, 120W
+Nevera Ejecutiva , LG, bajo consumo, LG, 250W
+Microondas , Panasonic, alto consumo, Panasonic, 800W
+Licuadora , Oster, bajo consumo, Oster, 450W
+Ventilador de Torre , Whirlpool, bajo consumo, Whirlpool, 100W
+Aspiradora , Electrolux, alto consumo, Electrolux, 950W

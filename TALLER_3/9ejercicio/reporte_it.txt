@@ -1,0 +1,3 @@
+ID,Nombre,Departamento,Salario Base,Bonificaciones,Descuentos,Salario Neto
+001,Ana Gomez,IT,2000.00,300.00,0.00,2300.00
+002,Luis Perez,IT,2500.00,0.00,100.00,2400.00

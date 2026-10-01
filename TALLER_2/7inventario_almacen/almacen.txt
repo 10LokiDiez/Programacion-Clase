@@ -1,0 +1,6 @@
+1,Arroz 1kg,50,4200.0,Abarrotes
+2,Aceite Vegetal 1L,30,12500.0,Abarrotes
+3,Detergente Liquido 2L,20,22000.0,Aseo
+4,Jabon de Bano,60,3500.0,Aseo
+5,Televisor Smart 43,8,1200000.0,Electronica
+6,Audifonos Bluetooth,15,85000.0,Electronica

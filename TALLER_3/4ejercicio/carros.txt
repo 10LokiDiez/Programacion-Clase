@@ -1,0 +1,4 @@
+Toyota,Corolla,2026,Sedán,ABC-123
+Ford,Fiesta,2015,Hatchback,XYZ-987
+Mazda,CX-5,2026,SUV,DEF-456
+Honda,Civic,2022,Sedán,GHI-789

@@ -1,0 +1,6 @@
+Perro,Lucas,8
+Gato,Michi,3
+Loro,Paco,15
+Tortuga,Manuelita,35
+Hamster,Bola de Nieve,1
+Conejo,Tambor,4

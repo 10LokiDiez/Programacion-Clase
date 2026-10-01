@@ -1,0 +1,3 @@
+Edad: 25 Genero: Femenino Ciudad: Pereira Opinion: Excelente servicio
+Edad: 28 Genero: Femenino Ciudad: Pereira Opinion: Me gustó mucho la atención
+Edad: 22 Genero: Masculino Ciudad: Pereira Opinion: Precios muy altos

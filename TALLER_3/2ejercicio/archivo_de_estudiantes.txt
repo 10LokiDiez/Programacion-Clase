@@ -1,0 +1,5 @@
+Ana Gómez con codigo: 101, estudiando Ingeniería de Sistemas, cuenta con una edad de 20, promedio 4.5. Estado:Aprobado
+Carlos Ruiz con codigo: 102, estudiando Derecho, cuenta con una edad de 22, promedio 2.8. Estado:Reprobado
+María López con codigo: 103, estudiando Medicina, cuenta con una edad de 21, promedio 3.8. Estado:Aprobado
+Juan Pérez con codigo: 104, estudiando Administración, cuenta con una edad de 23, promedio 2.9. Estado:Reprobado
+Sofía Castro con codigo: 105, estudiando Arquitectura, cuenta con una edad de 19, promedio 4.2. Estado:Aprobado

@@ -1,0 +1,3 @@
+Nombre: Laptop, Precio: 1200.5, Cantidad: 5
+Nombre: Raton Inalámbrico, Precio: 25.0, Cantidad: 20
+Nombre: Teclado Mecánico, Precio: 85.0, Cantidad: 10

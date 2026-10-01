@@ -1,0 +1,4 @@
+1,Simon,28,Cali,-150000.0
+2,Andrea,32,Medellin,500000.0
+3,Carlos,22,Bogota,-45000.5
+4,Mariana,40,Pereira,1200000.0

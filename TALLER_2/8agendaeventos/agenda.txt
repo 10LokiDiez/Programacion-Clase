@@ -1,0 +1,4 @@
+1,Reunion de Equipo,2026-09-24,09:00,Sala A,Carlos
+2,Presentacion Proyecto,2026-09-27,14:00,Auditorio,Ana
+3,Taller Python,2026-10-02,11:00,Lab 2,Simon
+4,Revision Trimestral,2026-10-07,16:00,Sala B,Mariana

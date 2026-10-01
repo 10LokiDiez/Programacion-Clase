@@ -1,0 +1,2 @@
+ID,Nombre,Departamento,Salario Base,Bonificaciones,Descuentos,Salario Neto
+003,Carlos Ruiz,Ventas,1500.00,500.00,0.00,2000.00
