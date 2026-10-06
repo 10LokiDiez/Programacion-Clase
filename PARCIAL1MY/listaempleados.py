@@ -22,6 +22,7 @@ calcula sumando un bono al salario base que depende de los años de experiencia:
 ▪ Más de 5 años: bono de 15% del salario base.
 o Un método para representar al empleado en formato de texto.
 """
+import os
 class Empleado:
     def __init__(self, id, nombre, salario, years):
         self.id = id
@@ -98,6 +99,9 @@ class GestorEmpleados:
     
     # o cargar_empleados(archivo: str): Carga la lista de empleados desde un archivo.        
     def cargar_empleados(self, path_file):
+        if not os.path.exists(path_file):
+            print("Archivo no encontrado")
+            return
         with open(path_file, "r", encoding="utf-8") as file:
             lineas = file.readlines()
         for linea in lineas:
@@ -107,6 +111,9 @@ class GestorEmpleados:
     #o editar_empleado(id: int): Busca un empleado y deja editar la informacion que se quiera del empleado,
     #luego se debe actualizar el archivo donde esta guardada la información.
     def editar_empleado(self,id,path_file):
+        if not os.path.exists(path_file):
+            print("Archivo no encontrado")
+            return
         empleado = self.buscar_empleado(id)
         if empleado == None:
             return
@@ -233,7 +240,8 @@ def menu(path_file):
                 print("Opcion Invalida, Intente de nuevo")
         
 def main():
-    path_file = ("c:\\Users\\sidim\\Escritorio\\universidad\\Programacion Clase\\PARCIAL_1\\2SistemaEmpleados\\listaempleados.txt")
+    path_file = os.path.join(os.path.dirname(__file__), "listaempleados.txt")
+    print(path_file)
     menu(path_file)
     
 main()
