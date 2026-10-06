@@ -34,8 +34,8 @@ def main():
     equipo2.agregar_jugador("Arda Guller")
     
     
-    print(f"En el equipo {equipo1.nombre_equipo} hay: {len(equipo1)}")
-    print(f"En el equipo {equipo2.nombre_equipo} hay: {len(equipo2)}")
+    print(f"En el equipo {equipo1.nombre_equipo} hay: {len(equipo1)} jugadores")
+    print(f"En el equipo {equipo2.nombre_equipo} hay: {len(equipo2)} jugadores")
     
 if __name__ == "__main__":
     main()
