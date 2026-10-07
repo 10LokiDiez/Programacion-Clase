@@ -241,7 +241,6 @@ def menu(path_file):
         
 def main():
     path_file = os.path.join(os.path.dirname(__file__), "listaempleados.txt")
-    print(path_file)
     menu(path_file)
     
 main()
