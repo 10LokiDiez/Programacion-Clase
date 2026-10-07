@@ -19,6 +19,7 @@ o disminuir_inventario(cantidad: int): Disminuye la cantidad del inventario al r
 o aumentar_inventario(cantidad: int): Aumenta la cantidad del inventario al reponer stock.
 o mostrar_informacion(): Muestra la información del producto en formato legible.
 """
+import xml.etree.ElementTree as ET
 class Producto:
     def __init__(self, id, nombre, precio, cantidadinv):
         self.id = id
@@ -103,6 +104,8 @@ class Tienda:
         self.listacli.append(cliente)
         
     def realiza_venta(self, idcliente, idproducto, cantidad):
+        clientef = None
+        productof = None
         for cliente in self.listacli:
             if cliente.id == idcliente:
                 clientef = cliente
@@ -132,3 +135,142 @@ class Tienda:
         for cliente in self.listacli:
             cliente.mostrar_informacion()            
 
+    def guardar_datos(self, path):
+        root = ET.Element("Tienda")
+        
+        #(self, id, nombre, saldo)
+        for cli in self.listacli:
+            cliente = ET.SubElement(root, "Cliente")
+            cliente.set("id",str(cli.id))
+            nombre = ET.SubElement(cliente, "Nombre")
+            nombre.text = cli.nombre
+            saldo = ET.SubElement(cliente, "Saldo")
+            saldo.text = str(cli.saldo)
+        
+        #(self, id, nombre, precio, cantidadinv)
+        for pro in self.listapro:
+            producto = ET.SubElement(root, "Producto")
+            producto.set("id",str(pro.id))
+            nombre = ET.SubElement(producto, "Nombre")
+            nombre.text = pro.nombre
+            precio = ET.SubElement(producto, "Precio")
+            precio.text = str(pro.precio)
+            cantidad = ET.SubElement(producto, "Cantidad")
+            cantidad.text = str(pro.cantidadinv)
+            
+        tree = ET.ElementTree(root)
+        tree.write(path,encoding="utf-8",xml_declaration=True)
+        print("Archivo creado con exito")
+        
+    def cargar_datos(self, path):
+        tree = ET.parse(path)
+        
+        root = tree.getroot()
+        
+        for cliente in root.findall('Cliente'):
+            id_cli = cliente.get('id')
+            nombre = cliente.find('Nombre')
+            saldo = cliente.find('Saldo')
+            print(f"Nombre: {nombre}, Saldo: {saldo}")
+            self.agregar_cliente(Cliente(int(id_cli), nombre.text, float(saldo.text)))
+            
+        for producto in root.findall('Producto'):
+            id_pro = producto.get('id')
+            nombre = producto.find('Nombre')
+            precio = producto.find('Precio')
+            cantidad = producto.find('Cantidad')
+            print(f"Nombre: {nombre}, Precio: {precio}, Cantidad: {cantidad}")
+            self.agregar_producto(Producto(int(id_pro), nombre.text, float(precio.text), int(cantidad.text)))
+            
+            
+            
+def menu(path_file):
+    print("----- BIENVENIDO AL SISTEMA DE VENTAS -----")
+    tienda = Tienda()
+    ca = input("Le recomendamos antes de empezar cargar el inventario creado en el archivo (s/n): ").lower()    
+    if ca == "s":
+        tienda.cargar_datos(path_file)
+    while True:
+        print("-" * 50)
+        print("1. Agregar Producto")
+        print("2. Agregar Cliente")
+        print("3. Realizar Venta")
+        print("4. Ver Clientes y Productos")
+        print("5. Salir del Programa")
+        opcion = int(input("Ingresa la opcion que desea: "))
+        
+        if  1 <= opcion <= 5:
+            print("Dato Valido")
+        else:
+            print("Dato Erroneo")
+            continue
+        match opcion:
+            case 1:
+                print("------ AGREGAR PRODUCTO ------")
+                found = 0
+                id_prod = int(input("ID del producto: "))
+                for producto in tienda.listapro:
+                    if producto.id == id_prod:
+                        producto_encontrado = producto
+                        found = 1
+                        break
+                if found == 0:
+                    nombre = input("Nombre del producto: ")
+                    precio = float(input("Precio: "))
+                    cant = int(input("Cantidad en inventario: "))
+                    nuevo_producto = Producto(id_prod, nombre, precio, cant)
+                    tienda.agregar_producto(nuevo_producto)
+                    print("Producto agregado con exito.")
+                else:
+                    print(f"El producto {producto_encontrado.nombre} ya existe en el sistema.")
+                    cant_extra = int(input("Ingrese la cantidad a agregar al stock: "))
+                    producto_encontrado.aumentar_inventario(cant_extra)
+                    print("Stock actualizado con exito.")
+                tienda.guardar_datos(path_file)
+                    
+            case 2:
+                print("------ AGREGAR CLIENTE ------")
+                found = 0
+                id_cli = int(input("ID del cliente: "))
+                for cliente in tienda.listacli:
+                    if cliente.id == id_cli:
+                        found = 1
+                        break
+                
+                if found == 0:
+                    nombre = input("Nombre del cliente: ")
+                    saldo = float(input("Saldo inicial: "))
+                    
+                    nuevo_cliente = Cliente(id_cli, nombre, saldo)
+                    tienda.agregar_cliente(nuevo_cliente)
+                    print("Cliente agregado con exito.")
+                    tienda.guardar_datos(path_file)
+                else:
+                    print("El ID YA EXISTE")
+                
+            case 3:
+                print("------ REALIZAR VENTA ------")
+                id_cli = int(input("ID del Cliente que compra: "))
+                id_prod = int(input("ID del Producto a comprar: "))
+                cant = int(input("Cantidad a comprar: "))
+                tienda.realiza_venta(id_cli, id_prod, cant)
+                tienda.guardar_datos(path_file)
+                
+            case 4:
+                print("------ VER CLIENTES Y PRODUCTOS ------")
+                print("\n--- PRODUCTOS ---")
+                tienda.mostrar_productos()
+                print("\n--- CLIENTES ---")
+                tienda.mostrar_clientes()
+                
+            case 5:
+                print("Guardando datos y saliendo del programa...")
+                tienda.guardar_datos(path_file)
+                break            
+            
+def main():
+    path= "c:\\Users\\sidim\\Escritorio\\universidad\\Programacion Clase\\PARCIAL_1\\3SistemaVentas\\inventario.xml"
+    menu(path)
+
+
+main()
