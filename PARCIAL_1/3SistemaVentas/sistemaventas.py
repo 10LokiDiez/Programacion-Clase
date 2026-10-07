@@ -171,7 +171,6 @@ class Tienda:
             id_cli = cliente.get('id')
             nombre = cliente.find('Nombre')
             saldo = cliente.find('Saldo')
-            print(f"Nombre: {nombre}, Saldo: {saldo}")
             self.agregar_cliente(Cliente(int(id_cli), nombre.text, float(saldo.text)))
             
         for producto in root.findall('Producto'):
@@ -179,7 +178,6 @@ class Tienda:
             nombre = producto.find('Nombre')
             precio = producto.find('Precio')
             cantidad = producto.find('Cantidad')
-            print(f"Nombre: {nombre}, Precio: {precio}, Cantidad: {cantidad}")
             self.agregar_producto(Producto(int(id_pro), nombre.text, float(precio.text), int(cantidad.text)))
             
             
