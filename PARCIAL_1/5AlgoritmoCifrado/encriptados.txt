@@ -2,3 +2,4 @@ Palabra: seguridad, Llave(K): 7, Cifrado: lxznkbwtw
 Palabra: lxznkbwtw, Llave(K): 7, Descifrado: seguridad
 Palabra: simon, Llave(K): 10, Cifrado: iyced
 Palabra: simondiez, Llave(K): 10, Cifrado: iycedtyup
+Palabra: vaso, Llave(K): 2, Cifrado: tyqm
