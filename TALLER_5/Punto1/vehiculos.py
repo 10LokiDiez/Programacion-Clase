@@ -29,10 +29,11 @@ class Vehiculo:
     def duracion_llantas(self, marca):
         print("Por favor, especifica el tipo de vehiculo (Coche, Moto o Camion) para calcular la duracion exacta de las llantas...")
         
-    def tipo_cilindraje(self):
+    def recomendar_cilindraje(self):
         print("Te recomendamos especificar el tipo de vehiculo para darte una recomendacion exacta de combustible...")
 
 class Coche(Vehiculo):
+    carros = []
     def __init__(self, color, numllantas, velocidad, cilindrada):
         super().__init__(color, numllantas)
         self.velocidad = velocidad
@@ -64,29 +65,42 @@ class Coche(Vehiculo):
         
     def gasto_combustible(self):
         kmgalon = 40
-        galonmes = 1000/ kmgalon
-        print(f"""
-              Los precios son:
-Gasolina: {15600*galonmes:,}COP
-Extra: {18000*galonmes:,}COP""")
+        galonmes = 1000 / kmgalon
+        if self.cilindrada >= 2000:
+            print(f"Gasto mensual estimado (Gasolina Extra): ${18000 * galonmes:,.0f} COP")
+        else:
+            print(f"Gasto mensual estimado (Gasolina Corriente): ${15600 * galonmes:,.0f} COP")
         
     def guardar_carro(self):
         with open((os.path.join((os.path.dirname(__file__)),"vehiculos.txt")), "a", encoding="utf-8") as file:
-            file.write(f"{self.color},{self.numllantas},{self.velocidad},{self.cilindrada}")
+            file.write(f"{self.color},{self.numllantas},{self.velocidad},{self.cilindrada}\n")
+
+    def leer_carros(self):
+        Coche.carros.remove(self)
+        with open((os.path.join((os.path.dirname(__file__)),"vehiculos.txt")), "r", encoding="utf-8") as file:
+            for line in file:
+                color, numllantas, velocidad, cilindrada = line.strip().split(",")
+                print(f"Color: {color}, Numero de llantas: {numllantas}, Velocidad: {velocidad} km/h, Cilindrada: {cilindrada} cc")
+                Coche.carros.append(Coche(color, int(numllantas), int(velocidad), int(cilindrada)))
+    
 def main():
     destinos = {"Armenia": 45,
                 "Manizales": 50,
                 "Cali": 210,
                 "Medellin": 215,
-                "Bogota": 320,}
-    mi = Vehiculo("red", 4)
-    mi.duracion_llantas("es")
-    carro1 = Coche("red", 4, 100, 5000)
+                "Bogota": 320}
+    print("Bienvenido al programa de vehiculos")
+    color = input("Ingrese el color del coche: ")
+    numllantas = int(input("Ingrese el numero de llantas del coche: "))
+    velocidad = int(input("Ingrese la velocidad del coche (km/h): "))
+    cilindrada = int(input("Ingrese la cilindrada del coche (cc): "))
+    carro1 = Coche(color, numllantas, velocidad, cilindrada)
     carro1.duracion_llantas("Michelin")
     carro1.destinos_tiempo_llegada(destinos)
     carro1.guardar_carro()
-    carro1.gasto_combustible()
-    
+    carro1.gasto_combustible()  
+    Coche.leer_carros(carro1)
+
 if __name__ == "__main__":
     main()
         
