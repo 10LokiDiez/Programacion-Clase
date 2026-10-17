@@ -53,5 +53,6 @@ def main():
     for transporte in listaTransporte:
         print(f"{transporte.__class__.__name__}:")
         transporte.calcular_pasaje(10)
+        
 if __name__ == "__main__":
     main()
