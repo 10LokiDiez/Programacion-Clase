@@ -1,0 +1,60 @@
+
+-------------------------
+Marca: Samsung
+Modelo: QLED
+Numero de serie: TV001
+Consumo de energia: 120
+Estado: Apagado
+Wi-Fi: True
+Bluetooth: False
+Direccion IP: No asignada
+Nombre de red: Sin red
+Estado de conexion: Desconectado
+
+-------------------------
+Marca: JBL
+Modelo: Flip
+Numero de serie: PA001
+Consumo de energia: 30
+Estado: Apagado
+Wi-Fi: True
+Bluetooth: False
+Direccion IP: No asignada
+Nombre de red: Sin red
+Estado de conexion: Desconectado
+
+-------------------------
+Marca: Philips
+Modelo: Hue
+Numero de serie: BO001
+Consumo de energia: 10
+Estado: Apagado
+Wi-Fi: True
+Bluetooth: False
+Direccion IP: No asignada
+Nombre de red: Sin red
+Estado de conexion: Desconectado
+
+-------------------------
+Marca: Xiaomi
+Modelo: C200
+Numero de serie: CA001
+Consumo de energia: 15
+Estado: Apagado
+Wi-Fi: True
+Bluetooth: False
+Direccion IP: No asignada
+Nombre de red: Sin red
+Estado de conexion: Desconectado
+
+-------------------------
+Marca: Google
+Modelo: Nest
+Numero de serie: TE001
+Consumo de energia: 25
+Estado: Apagado
+Wi-Fi: True
+Bluetooth: False
+Direccion IP: No asignada
+Nombre de red: Sin red
+Estado de conexion: Desconectado
