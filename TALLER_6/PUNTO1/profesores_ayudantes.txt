@@ -1,0 +1,18 @@
+=== PROFESOR AYUDANTE ===
+Nombre: Laura Martinez
+Cedula: 45678
+Codigo: AYU001
+Materia asignada: Bases de Datos
+Profesor titular: Carlos Perez
+Fecha de inicio: 2026-02-01
+Fecha de registro: 2026-10-27T20:54:17.295865
+
+=== PROFESOR AYUDANTE ===
+Nombre: Laura Martinez
+Cedula: 45678
+Codigo: AYU001
+Materia asignada: Bases de Datos
+Profesor titular: Carlos Perez
+Fecha de inicio: 2026-02-01
+Fecha de registro: 2026-10-27T21:59:41.021373
+

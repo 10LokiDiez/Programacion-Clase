@@ -1,0 +1,60 @@
+=== PROFESOR ===
+Cedula: 12345
+Nombre: Carlos
+Apellido: Perez
+Correo: carlos@utp.edu.co
+Fecha de nacimiento: 1990-05-20
+Direccion: Pereira
+Codigo docente: DOC001
+Facultad: Ingenieria
+Salario: 50000
+Tipo: planta
+Horas trabajadas: 20
+Oficina: Oficina 101
+Fecha de registro: 2026-10-27T20:54:17.294127
+
+=== PROFESOR ===
+Cedula: 23412345
+Nombre: Simon
+Apellido: Diez
+Correo: simon@utp.edu.co
+Fecha de nacimiento: 2006-04-26
+Direccion: Pereira
+Codigo docente: DOC011
+Facultad: Ingenieria de Sistemas
+Salario: 500000
+Tipo: catedratico
+Horas trabajadas: 23
+Oficina: Oficina 104
+Fecha de registro: 2026-10-27T20:54:17.294142
+
+=== PROFESOR ===
+Cedula: 12345
+Nombre: Carlos
+Apellido: Perez
+Correo: carlos@utp.edu.co
+Fecha de nacimiento: 1990-05-20
+Direccion: Pereira
+Codigo docente: DOC001
+Facultad: Ingenieria
+Salario: 50000
+Tipo: planta
+Horas trabajadas: 20
+Oficina: Oficina 101
+Fecha de registro: 2026-10-27T21:59:41.018287
+
+=== PROFESOR ===
+Cedula: 23412345
+Nombre: Simon
+Apellido: Diez
+Correo: simon@utp.edu.co
+Fecha de nacimiento: 2006-04-26
+Direccion: Pereira
+Codigo docente: DOC011
+Facultad: Ingenieria de Sistemas
+Salario: 500000
+Tipo: catedratico
+Horas trabajadas: 23
+Oficina: Oficina 104
+Fecha de registro: 2026-10-27T21:59:41.018304
+
